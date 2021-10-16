@@ -1,5 +1,6 @@
 // See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
+    "name": "ROS2 Nav2",
     "context": "../",
     "dockerFile": "../Dockerfile",
     // This could launch the container as a non-root user

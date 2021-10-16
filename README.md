@@ -1,8 +1,8 @@
-# ROS master in Docker [![](https://img.shields.io/docker/pulls/frankjoshua/ros2-master)](https://hub.docker.com/r/frankjoshua/ros2-master) [![CI](https://github.com/frankjoshua/docker-ros2-master/workflows/CI/badge.svg)](https://github.com/frankjoshua/docker-ros2-master/actions)
+# ROS2 Navigation2 in Docker [![](https://img.shields.io/docker/pulls/frankjoshua/ros2-nav2)](https://hub.docker.com/r/frankjoshua/ros2-nav2) [![CI](https://github.com/frankjoshua/docker-ros2-nav2/workflows/CI/badge.svg)](https://github.com/frankjoshua/docker-ros2-nav2/actions)
 
 ## Description
 
-Runs a ros master in a Docker container. Probably need --network="host" because ROS uses ephemeral ports.
+Runs ROS2 Nav2 in a Docker container. Probably need --network="host" because ROS uses ephemeral ports.
 
 This repo is mostly an example of how to build a multi architecture docker container with ROS (Robotic Operating System). Github Actions is used to build 3 docker containers using `docker buildx` amd64 (x86 Desktop PC), arm64 (Jetson Nano) and arm32 (Raspberry Pi). This is for the purpose of developing locally on a work pc or laptop. Then being able to transfer your work to an embedded device with a high level of confidence of success.
 
@@ -11,9 +11,7 @@ This repo is mostly an example of how to build a multi architecture docker conta
 ```
 docker run -it \
     --network="host" \
-    --env="ROS_IP=$ROS_IP" \
-    --env="ROS_MASTER_URI=$ROS_MASTER_URI" \
-    frankjoshua/ros2-master
+    frankjoshua/ros2-nav2
 ```
 
 ## Building
@@ -23,7 +21,7 @@ Use [build.sh](build.sh) to build the docker containers.
 <br>Local builds are as follows:
 
 ```
-./build.sh -t frankjoshua/ros2-master -l
+./build.sh -t frankjoshua/ros2-nav2 -l
 ```
 
 ## Template
