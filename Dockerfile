@@ -2,6 +2,7 @@ FROM frankjoshua/ros2
 
 # ** [Optional] Uncomment this section to install additional packages. **
 #
+USER root
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
    && apt-get -y install --no-install-recommends ros-$ROS_DISTRO-navigation2 ros-$ROS_DISTRO-nav2-bringup \
