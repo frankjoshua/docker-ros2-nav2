@@ -1,7 +1,5 @@
 FROM frankjoshua/ros2
 
-# ** [Optional] Uncomment this section to install additional packages. **
-#
 USER root
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
@@ -13,10 +11,4 @@ RUN apt-get update \
    && rm -rf /var/lib/apt/lists/*
 ENV DEBIAN_FRONTEND=dialog
 
-# Set up auto-source of workspace for ros user
-ARG WORKSPACE
-RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/ros/.bashrc
-
-USER ros
-ENTRYPOINT [ "/bin/bash", "-i", "-c" ]
-CMD ["ros2 launch nav2_bringup navigation_launch.py"]
+CMD ["/bin/bash", "-i", "-c", "ros2 launch nav2_bringup navigation_launch.py"]
