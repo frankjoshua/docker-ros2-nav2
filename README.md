@@ -11,6 +11,8 @@ This repo is mostly an example of how to build a multi architecture docker conta
 ```
 docker run -it \
     --network="host" \
+    --pid=host \
+    --ipc=host \
     frankjoshua/ros2-nav2
 ```
 
