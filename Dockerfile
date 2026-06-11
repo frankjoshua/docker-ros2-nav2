@@ -1,4 +1,4 @@
-FROM frankjoshua/ros2
+FROM frankjoshua/ros2:humble
 
 USER root
 ENV DEBIAN_FRONTEND=noninteractive
